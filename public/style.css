@@ -1,11 +1,46 @@
-
-body {
-	font-family: 'Roboto', sans-serif;
-	font-size: 16px;
-	color: #222;
-	background-color: #FaFaFa;
-	text-align: center;
-	line-height: 1.4em;
+aside {
+	padding: 20px;
+	margin-top: 20px;
+	position: fixed;
+	height: 100vh;
 }
 
+main {
+	max-width: 50vw;
+}
 
+li {
+	list-style-type: none;
+}
+
+footer {
+	text-align: center;
+}
+
+#theme-toggle {
+	visibility: hidden;
+}
+
+#theme-toggle+label {
+	content: '';
+	display: inline-block;
+	cursor: pointer;
+	height: 40px;
+	width: 40px;
+	border-radius: 50%;
+	transition: all 0.3s ease-in-out;
+	position: fixed;
+	/* Position on the right bottom side of screen */
+	right: 20px;
+	bottom: 20px;
+	
+}
+
+#theme-toggle:not(:checked)+label {
+	background-color: gold;
+}
+
+#theme-toggle:checked+label {
+	background-color: transparent;
+	box-shadow: inset -9px -8px 1px 1px #fff;
+}
