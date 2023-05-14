@@ -8,7 +8,9 @@ var app = express();
 const port = process.env.PORT || 3000;
 var cors = require("cors");
 const bodyParser = require("body-parser");
+const multer = require("multer");
 const dns = require("dns");
+//MongoDB
 let mongoose = require("mongoose");
 let uri = process.env.MONGO_URI;
 mongoose.connect(uri, {
@@ -21,6 +23,7 @@ app.use(cors({ optionsSuccessStatus: 200 }));
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+app.use(multer().single("upfile"));
 
 app.get("/", function (req, res) {
   res.sendFile(__dirname + "/views/index.html");
@@ -120,6 +123,16 @@ app.post("/api/exercise/new-user", function (req, res) {
   if (username == "") {
     return res.json({ error: "username is required" });
   }
+});
+
+//File Metadata Microservice
+app.post("/api/fileanalyse", multer().single("upfile"), function (req, res) {
+  let file = req.file;
+  res.json({
+    name: file.originalname,
+    type: file.mimetype,
+    size: file.size,
+  });
 });
 
 app.listen(port, function () {

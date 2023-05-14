@@ -130,6 +130,27 @@
         </button>
       </div>
     </article>
+    <article>
+      <h3>File Metadata Microservice</h3>
+      <h4>Example Usage:</h4>
+      <p>
+        <a href="api/fileanalyse">[project url]/api/fileanalyse</a>
+      </p>
+      <h4>Example Output:</h4>
+      <p>
+        <code>{"name":"test.txt","type":"text/plain","size":12}</code>
+      </p>
+      <h4>Try it out</h4>
+      <div class="container">
+
+        <input id="input-fileanalyse" type="file" name="upfile" placeholder="Upload File">
+        <button type="submit" id="try-fileanalyse" value="Submit">
+          <!-- Post  -->
+          <i class="fa fa-paper-plane"></i>
+        </button>
+
+      </div>
+    </article>
 
   </main>
   <footer class="container">
@@ -237,6 +258,26 @@
           });
       });
 
+      //File Metadata
+      document.getElementById('try-fileanalyse').addEventListener('click', (e) => {
+        const input = document.getElementById('input-fileanalyse').files[0];
+        if (!input) return alert('Please select a file');
+        const output = document.getElementById('output-fileanalyse');
+        const url = `/api/fileanalyse`;
+        const formData = new FormData();
+        formData.append('upfile', input);
+        fetch(url, {
+          method: 'POST',
+          body: formData
+        })
+          .then(res => res.json())
+          .then(data => {
+            output.innerText = JSON.stringify(data);
+          })
+          .catch(err => {
+            output.innerText = err;
+          });
+      });
     });
   </script>
 </body>
