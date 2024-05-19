@@ -17,6 +17,7 @@ const runner = require("./test-runner");
 const exerciseTrackerRoutes = require("./routes/exercise_tracker.api.js");
 const microservicesRoutes = require("./routes/microservices.api.js");
 const metricImpConverterRoutes = require("./routes/metric_imp_converter.api.js");
+const sudokuSolverRoutes = require("./routes/sudoku_solver.api.js");
 
 mongoose.connect(uri, {
   useNewUrlParser: true,
@@ -43,6 +44,7 @@ app.get("/api/hello", function (req, res) {
 exerciseTrackerRoutes(app);
 microservicesRoutes(app);
 metricImpConverterRoutes(app);
+sudokuSolverRoutes(app);
 
 //---------------------------------------------------
 //404 Not Found Middleware

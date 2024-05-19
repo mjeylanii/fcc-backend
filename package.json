@@ -6,7 +6,7 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "test": "mocha ./tests/ --ui tdd"
+    "test": "mocha ./tests/ --recursive --ui tdd"
   },
   "dependencies": {
     "body-parser": "^1.20.2",

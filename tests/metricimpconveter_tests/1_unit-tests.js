@@ -4,7 +4,7 @@ const ConvertHandler = require("../../controllers/convertHandler.js");
 
 let convertHandler = new ConvertHandler();
 
-suite("Unit Tests", function () {
+suite("Converter Unit Tests", function () {
   test("Whole number input", function (done) {
     let input = "32L";
     assert.equal(convertHandler.getNum(input), 32);
