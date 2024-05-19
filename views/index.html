@@ -1,285 +1,438 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" data-theme="dark">
+    <head>
+        <title>API Services</title>
+        <link
+            href="https://fonts.googleapis.com/css?family=Roboto"
+            rel="stylesheet"
+            type="text/css"
+        />
+        <!-- icons -->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+        />
+        <link href="style.css" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" href="css/pico.min.css" />
+    </head>
 
-<head>
-  <title>API Services</title>
-  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
-  <!-- icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link href="style.css" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="css/pico.min.css">
-
-</head>
-
-<body>
-  <div>
-    <input type="checkbox" id="theme-toggle">
-    <label for="theme-toggle"></label>
-  </div>
-  <aside class="contaienr">
-    <h5 class="container">Navigation</h5>
-    <nav>
-      <ul>
-        <li><a href="#timestamp">Timestamp Microservice</a></li>
-        <li><a href="#header-parser">Request Header Parser Microservice</a></li>
-        <li><a href="#url-shortener">URL Shortener Microservice</a></li>
-        <li><a href="#">Exercise Tracker</a></li>
-        <li><a href="">File Metadata Microservice</a></li>
-      </ul>
-    </nav>
-  </aside>
-  <main class="conatiner">
-    <div class="container">
-      <h1>API Services</h1>
-    </div>
-    <article id="timestamp">
-
-      <body>
-        <h3>Timestamp Microservice</h3>
-        <h4>Example Usage:</h4>
-        <ul>
-          <li><a href="api/2015-12-25">[project
-              url]/api/2015-12-25</a></li>
-          <li><a href="api/1451001600000">[project url]/api/1451001600000</a></li>
-        </ul>
-        <h4>Example Output:</h4>
-        <p>
-          <code>{"unix":1451001600000, "utc":"Fri, 25 Dec 2015 00:00:00 GMT"}</code>
-        </p>
-        <h4>Try it out</h4>
-        <div class="container">
-          <input type="text" id="input-timestamp" placeholder=" Enter a date or unix timestamp eg: 1451001600000
-          ">
-          <button id="try-timestamp">Try it</button>
-          <code class="container-fluid">
-          <p id="output-timestamp" >Output</p>
-        </code>
+    <body>
+        <div>
+            <input type="checkbox" id="theme-toggle" />
+            <label for="theme-toggle"></label>
         </div>
-      </body>
-    </article>
+        <aside class="contaienr">
+            <h5 class="container">Navigation</h5>
+            <nav>
+                <ul>
+                    <li><a href="#timestamp">Timestamp Microservice</a></li>
+                    <li>
+                        <a href="#header-parser"
+                            >Request Header Parser Microservice</a
+                        >
+                    </li>
+                    <li>
+                        <a href="#url-shortener">URL Shortener Microservice</a>
+                    </li>
+                    <li><a href="#">Exercise Tracker</a></li>
+                    <li><a href="">File Metadata Microservice</a></li>
+                    <li>
+                        <a href="#unit-converter">Metric-Imperial Converter</a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="conatiner">
+            <div class="container">
+                <h1>API Services</h1>
+            </div>
+            <article id="timestamp">
+                <body>
+                    <h3>Timestamp Microservice</h3>
+                    <h4>Example Usage:</h4>
+                    <ul>
+                        <li>
+                            <a href="api/2015-12-25"
+                                >[project url]/api/2015-12-25</a
+                            >
+                        </li>
+                        <li>
+                            <a href="api/1451001600000"
+                                >[project url]/api/1451001600000</a
+                            >
+                        </li>
+                    </ul>
+                    <h4>Example Output:</h4>
+                    <p>
+                        <code
+                            >{"unix":1451001600000, "utc":"Fri, 25 Dec 2015
+                            00:00:00 GMT"}</code
+                        >
+                    </p>
+                    <h4>Try it out</h4>
+                    <div class="container">
+                        <input
+                            type="text"
+                            id="input-timestamp"
+                            placeholder=" Enter a date or unix timestamp eg: 1451001600000
+          "
+                        />
+                        <button id="try-timestamp">Try it</button>
+                        <code class="container-fluid">
+                            <p id="output-timestamp">Output</p>
+                        </code>
+                    </div>
+                </body>
+            </article>
 
-    <article id="header-parser">
-      <h3>Request Header Parser Microservice</h3>
+            <article id="header-parser">
+                <h3>Request Header Parser Microservice</h3>
 
-      <body>
-        <h4>Example Usage:</h4>
-        <p>
-          <a href="api/whoami">[base url]/api/whoami</a>
-        </p>
-        <h4>Example Output:</h4>
-        <p>
-          <code>{"ipaddress":"::ffff:159.20.14.100","language":"en-US,en;q=0.5",<br>"software":"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:50.0) Gecko/20100101 Firefox/50.0"}</code>
-        </p>
-        <h4>Try it out</h4>
-        <div class="container">
-          <button id="try-whoami">Try it</button>
-          <code class="container-fluid">
-          <p id="output-whoami">Output</p>
-        </code>
-        </div>
-      </body>
-    </article>
-    <article id="url-shortener">
-      <h3>URL Shortener Microservice</h3>
+                <body>
+                    <h4>Example Usage:</h4>
+                    <p>
+                        <a href="api/whoami">[base url]/api/whoami</a>
+                    </p>
+                    <h4>Example Output:</h4>
+                    <p>
+                        <code
+                            >{"ipaddress":"::ffff:159.20.14.100","language":"en-US,en;q=0.5",<br />"software":"Mozilla/5.0
+                            (X11; Ubuntu; Linux x86_64; rv:50.0) Gecko/20100101
+                            Firefox/50.0"}</code
+                        >
+                    </p>
+                    <h4>Try it out</h4>
+                    <div class="container">
+                        <button id="try-whoami">Try it</button>
+                        <code class="container-fluid">
+                            <p id="output-whoami">Output</p>
+                        </code>
+                    </div>
+                </body>
+            </article>
+            <article id="url-shortener">
+                <h3>URL Shortener Microservice</h3>
+                <body>
+                    <h4>Example Usage:</h4>
+                    <p>
+                        <a href="api/shorturl/new/https://www.google.com"
+                            >[project
+                            url]/api/shorturl/new/https://www.google.com</a
+                        >
+                    </p>
+                    <h4>Example Output:</h4>
+                    <p>
+                        <code
+                            >{"original_url":"https://www.google.com","short_url":1}</code
+                        >
+                    </p>
+                    <h4>Try it out</h4>
+                    <div class="container">
+                        <input
+                            id="input-shorturl-post"
+                            type="text"
+                            name="url"
+                            placeholder="Enter URL"
+                        />
+                        <button
+                            type="submit"
+                            id="try-shorturl-post"
+                            value="Submit"
+                        >
+                            <!-- Post  -->
+                            <i class="fa fa-paper-plane"></i>
+                        </button>
+                        <input
+                            id="input-shorturl-get"
+                            type="search"
+                            name="url"
+                            placeholder="Enter Short URL"
+                            required
+                            pattern="[0-9]+"
+                        />
+                        <!-- Get -->
+                        <button
+                            type="submit"
+                            id="try-shorturl-get"
+                            value="Submit"
+                        >
+                            <i class="fa fa-search" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                    <!-- Output in a textbox-->
+                    <code class="container-fluid">
+                        <p id="output-shorturl">Output</p>
+                    </code>
 
-      <body>
-        <h4>Example Usage:</h4>
-        <p>
-          <a href="api/shorturl/new/https://www.google.com">[project url]/api/shorturl/new/https://www.google.com</a>
-        </p>
-        <h4>Example Output:</h4>
-        <p>
-          <code>{"original_url":"https://www.google.com","short_url":1}</code>
-        </p>
-        <h4>Try it out</h4>
-        <div class="container">
-          <input id="input-shorturl-post" type="text" name="url" placeholder="Enter URL">
-          <button type="submit" id="try-shorturl-post" value="Submit">
-            <!-- Post  -->
-            <i class="fa fa-paper-plane"></i>
-          </button>
-          <input id="input-shorturl-get" type="search" name="url" placeholder="Enter Short URL" required
-            pattern="[0-9]+">
-          <!-- Get -->
-          <button type="submit" id="try-shorturl-get" value="Submit">
-            <i class="fa fa-search" aria-hidden="true"></i>
-          </button>
-        </div>
-        <!-- Output in a textbox-->
-        <code class="container-fluid">
-        <p id="output-shorturl">Output</p>
-      </code>
-      </body>
-    </article>
-    <article>
-      <h3>Exercise Tracker</h3>
-      <h4>Example Usage:</h4>
-      <p>
-        <a href="api/exercise/new-user">[project url]/api/exercise/new-user</a>
-      </p>
-      <h4>Example Output:</h4>
-      <p>
-        <code>{"username":"test","_id":"5e4e3b9b0b5b9a0017b0f1f9"}</code>
-      </p>
-      <h4>Try it out</h4>
-      <div class="container">
-        <input id="input-exercise-new-user" type="text" name="username" placeholder="Enter Username">
-        <button type="submit" id="try-exercise-new-user" value="Submit">
-          <!-- Post  -->
-          <i class="fa fa-paper-plane"></i>
-        </button>
-      </div>
-    </article>
-    <article>
-      <h3>File Metadata Microservice</h3>
-      <h4>Example Usage:</h4>
-      <p>
-        <a href="api/fileanalyse">[project url]/api/fileanalyse</a>
-      </p>
-      <h4>Example Output:</h4>
-      <p>
-        <code>{"name":"test.txt","type":"text/plain","size":12}</code>
-      </p>
-      <h4>Try it out</h4>
-      <div class="container">
+            </article>
+            <article>
+                <h3>Exercise Tracker</h3>
+                <h4>Example Usage:</h4>
+                <p>
+                    <a href="api/exercise/new-user"
+                        >[project url]/api/exercise/new-user</a
+                    >
+                </p>
+                <h4>Example Output:</h4>
+                <p>
+                    <code
+                        >{"username":"test","_id":"5e4e3b9b0b5b9a0017b0f1f9"}</code
+                    >
+                </p>
+                <h4>Try it out</h4>
+                <div class="container">
+                    <input
+                        id="input-exercise-new-user"
+                        type="text"
+                        name="username"
+                        placeholder="Enter Username"
+                    />
+                    <button
+                        type="submit"
+                        id="try-exercise-new-user"
+                        value="Submit"
+                    >
+                        <i class="fa fa-paper-plane"></i>
+                    </button>
+                </div>
+            </article>
+            <article id="filemeta">
+                <h3>File Metadata Microservice</h3>
+                <h4>Example Usage:</h4>
+                <p>
+                    <a href="api/fileanalyse">[project url]/api/fileanalyse</a>
+                </p>
+                <h4>Example Output:</h4>
+                <p>
+                    <code
+                        >{"name":"test.txt","type":"text/plain","size":12}</code
+                    >
+                </p>
+                <h4>Try it out</h4>
+                <div class="container">
+                    <input
+                        id="input-fileanalyse"
+                        type="file"
+                        name="upfile"
+                        placeholder="Upload File"
+                    />
+                    <button type="submit" id="try-fileanalyse" value="Submit">
+                        <i class="fa fa-paper-plane"></i>
+                    </button>
+                    <code class="container-fluid">
+                        <p id="output-fileanalyse">Output</p>
+                    </code>
+                </div>
+            </article>
+            <article id="converter">
+                <h3>Unit Converter</h3>
+                <h4>Example Usage:</h4>
+                <p>
+                    <a href="api/convert?input=4gal"
+                        >[project url]/api/convert?input=4gal</a
+                    >
+                </p>
+                <h4>Example Output:</h4>
+                <p>
+                    <code
+                        >{"initNum":4,"initUnit":"gal","returnNum":15.137,"returnUnit":"L","string":"4
+                        gallons converts to 15.137 Liters"}</code
+                    >
+                </p>
+                <h4>Try it out</h4>
+                <div class="container">
+                    <input
+                        id="input-convert"
+                        type="text"
+                        name="input"
+                        placeholder="Enter conversion"
+                    />
+                    <button type="submit" id="try-convert" value="Submit">
+                        <i class="fa fa-paper-plane"></i>
+                    </button>
+                    <code class="container-fluid">
+                        <p id="output-unit-converter">Output</p>
+                    </code>
+                </div>
 
-        <input id="input-fileanalyse" type="file" name="upfile" placeholder="Upload File">
-        <button type="submit" id="try-fileanalyse" value="Submit">
-          <!-- Post  -->
-          <i class="fa fa-paper-plane"></i>
-        </button>
+            </article>
+        </main>
+    </body>
+        <!-- <footer class="container">
+            <p>By <a href="">Mohamed Jeylani</a></p>
+        </footer> -->
 
-      </div>
-    </article>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const themeToggle = document.getElementById("theme-toggle");
+                const prefersDarkMode = window.matchMedia(
+                    "(prefers-color-scheme: dark)",
+                ).matches;
+                if (prefersDarkMode) {
+                    themeToggle.checked = true;
+                }
 
-  </main>
-  <footer class="container">
-    <p>
-      By <a href="">Mohamed Jeylani</a>
-    </p>
-  </footer>
+                themeToggle.addEventListener("click", (e) => {
+                    const checked = e.target.checked;
+                    document.documentElement.setAttribute(
+                        "data-theme",
+                        checked ? "dark" : "light",
+                    );
+                });
 
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const themeToggle = document.getElementById('theme-toggle');
-      const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      if (prefersDarkMode) {
-        themeToggle.checked = true;
-      }
+                // Timestamp
+                document
+                    .getElementById("try-timestamp")
+                    .addEventListener("click", (e) => {
+                        const input =
+                            document.getElementById("input-timestamp").value;
+                        const output =
+                            document.getElementById("output-timestamp");
+                        const url = "api/date/" + input;
 
-      themeToggle.addEventListener('click', (e) => {
-        const checked = e.target.checked;
-        document.documentElement.setAttribute('data-theme', checked ? 'dark' : 'light');
-      });
+                        fetch(url)
+                            .then((res) => {
+                                if (res.ok) {
+                                    return res.json();
+                                } else {
+                                    throw new Error("Something went wrong");
+                                }
+                            })
+                            .then((data) => {
+                                output.innerHTML = JSON.stringify(data);
+                            })
+                            .catch((err) => {
+                                output.innerHTML = err;
+                            });
+                    });
 
-      // Timestamp
-      document.getElementById('try-timestamp').addEventListener('click', (e) => {
-        const input = document.getElementById('input-timestamp').value;
-        const output = document.getElementById('output-timestamp');
-        const url = 'api/date/' + input;
-        console.log(url)
-        fetch(url)
-          .then(res => {
-            if (res.ok) {
-              return res.json();
-            } else {
-              throw new Error('Something went wrong');
-            }
-          })
-          .then(data => {
-            output.innerHTML = JSON.stringify(data);
-          })
-          .catch(err => {
-            output.innerHTML = err;
-          });
-      });
+                // Header Parser
+                document
+                    .getElementById("try-whoami")
+                    .addEventListener("click", (e) => {
+                        const apiUrl = "api/whoami";
+                        const output = document.getElementById("output-whoami");
+                        const url = apiUrl;
+                        fetch(url)
+                            .then((res) => res.json())
+                            .then((data) => {
+                                output.innerHTML = JSON.stringify(data);
+                            })
+                            .catch((err) => {
+                                output.value = err;
+                            });
+                    });
 
-
-      // Header Parser
-      document.getElementById('try-whoami').addEventListener('click', (e) => {
-        const apiUrl = 'api/whoami';
-        const output = document.getElementById('output-whoami');
-        const url = apiUrl;
-        fetch(url)
-          .then(res => res.json())
-          .then(data => {
-            output.innerHTML = JSON.stringify(data);
-          })
-          .catch(err => {
-            output.value = err;
-          });
-      });
-
-      // URL Shortener
-      document.getElementById('try-shorturl-post').addEventListener('click', (e) => {
-        const input = document.getElementById('input-shorturl-post').value;
-        if (!input) return alert('Please enter a valid URL');
-        const output = document.getElementById('output-shorturl');
-        const url = `/api/shorturl`;
-        fetch(url, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({ url: input })
-        })
-          .then(res => res.json())
-          .then(data => {
-            if (data.error) {
-              output.innerText = JSON.stringify(data);
-            } else {
-              output.innerHTML = `
+                // URL Shortener
+                document
+                    .getElementById("try-shorturl-post")
+                    .addEventListener("click", (e) => {
+                        const input = document.getElementById(
+                            "input-shorturl-post",
+                        ).value;
+                        if (!input) return alert("Please enter a valid URL");
+                        const output =
+                            document.getElementById("output-shorturl");
+                        const url = `/api/shorturl`;
+                        fetch(url, {
+                            method: "POST",
+                            headers: {
+                                "Content-Type": "application/json",
+                            },
+                            body: JSON.stringify({ url: input }),
+                        })
+                            .then((res) => res.json())
+                            .then((data) => {
+                                if (data.error) {
+                                    output.innerText = JSON.stringify(data);
+                                } else {
+                                    output.innerHTML = `
             Original URL: <a href="${data.original_url}">${data.original_url}</a> <br> Short URL: <small id="${data.short_url}">${data.short_url}</small>`;
-            }
-          })
-          .catch(err => {
-            output.innerText = err;
-          });
-      });
-      // URL Shortener
-      document.getElementById('try-shorturl-get').addEventListener('click', (e) => {
-        const input = document.getElementById('input-shorturl-get').value;
-        if (!input) return alert('Please enter a valid URL');
-        const output = document.getElementById('output-shorturl');
-        const url = `/api/shorturl/${input}`;
-        fetch(url)
-          .then(data => {
-            if (data.error) {
-              output.innerText = JSON.stringify(data);
-            } else {
-              const redirectMsg = `This URL might redirect you to ${data.original_url}. Do you want to proceed?`;
-              if (confirm(redirectMsg)) {
-                window.location.href = data.original_url;
-              }
-            }
-          })
-          .catch(err => {
-            output.innerText = err;
-          });
-      });
+                                }
+                            })
+                            .catch((err) => {
+                                output.innerText = err;
+                            });
+                    });
+                // URL Shortener
+                document
+                    .getElementById("try-shorturl-get")
+                    .addEventListener("click", (e) => {
+                        const input =
+                            document.getElementById("input-shorturl-get").value;
+                        if (!input) return alert("Please enter a valid URL");
+                        const output =
+                            document.getElementById("output-shorturl");
+                        const url = `/api/shorturl/${input}`;
+                        fetch(url)
+                            .then((data) => {
+                                if (data.error) {
+                                    output.innerText = JSON.stringify(data);
+                                } else {
+                                    const redirectMsg = `This URL might redirect you to ${data.original_url}. Do you want to proceed?`;
+                                    if (confirm(redirectMsg)) {
+                                        window.location.href =
+                                            data.original_url;
+                                    }
+                                }
+                            })
+                            .catch((err) => {
+                                output.innerText = err;
+                            });
+                    });
 
-      //File Metadata
-      document.getElementById('try-fileanalyse').addEventListener('click', (e) => {
-        const input = document.getElementById('input-fileanalyse').files[0];
-        if (!input) return alert('Please select a file');
-        const output = document.getElementById('output-fileanalyse');
-        const url = `/api/fileanalyse`;
-        const formData = new FormData();
-        formData.append('upfile', input);
-        fetch(url, {
-          method: 'POST',
-          body: formData
-        })
-          .then(res => res.json())
-          .then(data => {
-            output.innerText = JSON.stringify(data);
-          })
-          .catch(err => {
-            output.innerText = err;
-          });
-      });
-    });
-  </script>
-</body>
+                //File Metadata
+                document
+                    .getElementById("try-fileanalyse")
+                    .addEventListener("click", (e) => {
+                        const input =
+                            document.getElementById("input-fileanalyse")
+                                .files[0];
+                        if (!input) return alert("Please select a file");
+                        const output =
+                            document.getElementById("output-fileanalyse");
+                        const url = `/api/fileanalyse`;
+                        const formData = new FormData();
+                        formData.append("upfile", input);
+                        fetch(url, {
+                            method: "POST",
+                            body: formData,
+                        })
+                            .then((res) => res.json())
+                            .then((data) => {
+                                output.innerText = JSON.stringify(data);
+                            })
+                            .catch((err) => {
+                                output.innerText = err;
+                            });
+                    });
 
+                //Unit Converter
+                document
+                    .getElementById("try-convert")
+                    .addEventListener("click", (e) => {
+                        const input =
+                            document.getElementById("input-convert").value;
+                        const output =
+                            document.getElementById("output-unit-converter");
+                        const url = `/api/convert?input=${input}`;
+                        fetch(url)
+                            .then((res) => {
+                                if (res.ok) {
+                                    return res.json();
+                                } else {
+                                    throw new Error("Something went wrong");
+                                }
+                            })
+                            .then((data) => {
+                                output.innerHTML = JSON.stringify(data);
+
+                            })
+                            .catch((err) => {
+                                output.innerHTML = err;
+                            });
+                    });
+            });
+        </script>
+    </body>
 </html>

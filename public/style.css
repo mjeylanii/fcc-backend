@@ -1,46 +1,57 @@
 aside {
-	padding: 20px;
-	margin-top: 20px;
-	position: fixed;
-	height: 100vh;
+    padding: 20px;
+    margin-top: 20px;
+    /* position: fixed; */
+    height: 100vh;
+    max-width: 20vw;
 }
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    transition: all 0.3s ease-in-out;
 
-main {
-	max-width: 50vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding-right: 10em;
 }
 
 li {
-	list-style-type: none;
+    list-style-type: none;
 }
 
 footer {
-	text-align: center;
+    text-align: center;
 }
 
 #theme-toggle {
-	visibility: hidden;
+    visibility: hidden;
 }
 
-#theme-toggle+label {
-	content: '';
-	display: inline-block;
-	cursor: pointer;
-	height: 40px;
-	width: 40px;
-	border-radius: 50%;
-	transition: all 0.3s ease-in-out;
-	position: fixed;
-	/* Position on the right bottom side of screen */
-	right: 20px;
-	bottom: 20px;
-	
+#theme-toggle + label {
+    content: "";
+    display: inline-block;
+    cursor: pointer;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    transition: all 0.3s ease-in-out;
+    position: fixed;
+    /* Position on the right bottom side of screen */
+    right: 20px;
+    bottom: 20px;
 }
 
-#theme-toggle:not(:checked)+label {
-	background-color: gold;
+#theme-toggle:not(:checked) + label {
+    background-color: gold;
 }
 
-#theme-toggle:checked+label {
-	background-color: transparent;
-	box-shadow: inset -9px -8px 1px 1px #fff;
+#theme-toggle:checked + label {
+    background-color: transparent;
+    box-shadow: inset -9px -8px 1px 1px #fff;
+}
+footer {
+    position: relative;
+    bottom: 0;
 }
